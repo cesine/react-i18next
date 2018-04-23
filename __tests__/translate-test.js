@@ -1,6 +1,7 @@
 jest.unmock('../src/translate');
 import React from 'react';
 import translate from '../src/translate';
+import PropTypes from 'prop-types';
 
 describe('translate', () => {
   it('should return a function', () => {
@@ -14,8 +15,8 @@ describe('translate', () => {
     Elem.NOT_KNOWN_REACT_STATIC = 'IS HOISTED ?';
     const wrapped = wrap(Elem);
     expect(wrapped.WrappedComponent).toBe(Elem);
-    expect(wrapped.contextTypes.i18n).toBe(React.PropTypes.object);
-    expect(wrapped.childContextTypes.t).toBe(React.PropTypes.func.isRequired);
+    expect(wrapped.contextTypes.i18n).toBe(PropTypes.object);
+    expect(wrapped.childContextTypes.t).toBe(PropTypes.func.isRequired);
     expect(wrapped.displayName).toBe('Translate(Elem)');
     expect(wrapped.namespaces.length).toBe(2);
     expect(wrapped.namespaces[0]).toBe('ns1');
