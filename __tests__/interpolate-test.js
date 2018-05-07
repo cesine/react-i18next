@@ -1,13 +1,14 @@
 jest.unmock('../src/translate');
 import React from 'react';
 import Interpolate from '../src/interpolate';
+import PropTypes from 'prop-types';
 
 describe('interpolate', () => {
   it('should have some stuff', () => {
     expect(Interpolate.contextTypes.i18n)
-      .toBe(React.PropTypes.object.isRequired);
+      .toBe(PropTypes.object.isRequired);
     expect(Interpolate.contextTypes.t)
-      .toBe(React.PropTypes.func.isRequired);
+      .toBe(PropTypes.func.isRequired);
     const props = {};
     const context = {
       i18n: {},

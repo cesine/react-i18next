@@ -1,6 +1,6 @@
 {
   "name": "react-i18next",
-  "version": "1.11.0",
+  "version": "1.11.1-rc0",
   "description": "React integration for i18next",
   "main": "dist/commonjs/index.js",
   "jsnext:main": "dist/es/index.js",
@@ -44,6 +44,7 @@
     "jest": "14.1.0",
     "jest-cli": "14.1.0",
     "mkdirp": "0.5.1",
+    "prop-types": "^15.6.1",
     "react": "15.3.0",
     "rimraf": "2.5.4",
     "rollup": "0.34.10",
@@ -54,7 +55,8 @@
     "yargs": "5.0.0"
   },
   "peerDependencies": {
-    "i18next": ">= 2.0.0"
+    "i18next": ">= 2.0.0",
+    "prop-types": "*"
   },
   "scripts": {
     "clean": "rimraf dist && mkdirp dist",

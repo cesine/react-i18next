@@ -1,6 +1,7 @@
 jest.unmock('../src/I18nextProvider');
 import React from 'react';
 import  I18nextProvider from '../src/I18nextProvider' ;
+import PropTypes from 'prop-types';
 
 describe('I18nextProvider', () => {
   it('should provide i18n context', () => {
@@ -8,7 +9,7 @@ describe('I18nextProvider', () => {
     const wrapper = new I18nextProvider({ i18n });
     expect(wrapper.getChildContext().i18n).toBe(i18n);
     expect(I18nextProvider.childContextTypes.i18n)
-      .toBe(React.PropTypes.object.isRequired);
+      .toBe(PropTypes.object.isRequired);
   });
   it('should throw an exception if you try to change i18n object', () => {
     const i18n = {};
@@ -28,10 +29,10 @@ describe('I18nextProvider', () => {
   });
   it('should have i18n proptype required', () => {
     expect(I18nextProvider.propTypes.i18n)
-      .toBe(React.PropTypes.object.isRequired);
+      .toBe(PropTypes.object.isRequired);
   });
   it('should have children proptype required', () => {
     expect(I18nextProvider.propTypes.children)
-      .toBe(React.PropTypes.element.isRequired);
+      .toBe(PropTypes.element.isRequired);
   });
 });
